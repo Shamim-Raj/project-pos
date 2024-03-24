@@ -108,13 +108,7 @@
                 <?php
                 $add_permission_active = $role_has_permissions_list->where('name', 'transfers-add')->first();
                 ?>
-                @if($add_permission_active)
-                <li id="transfer-create-menu"><a href="{{route('transfers.create')}}">{{trans('file.Add Transfer')}}</a></li>
-                <li id="transfer-import-menu"><a href="{{url('transfers/transfer_by_csv')}}">{{trans('file.Import Transfer By CSV')}}</a></li>
-                @endif
-            </ul>
-            </li>
-            @endif --}}
+             
 
             <?php
                 $sale_return_index_permission_active = $role_has_permissions_list->where('name', 'returns-index')->first();
