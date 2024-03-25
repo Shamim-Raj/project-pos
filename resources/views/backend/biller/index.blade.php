@@ -1,3 +1,8 @@
+<style>
+    .dt-buttons{
+     display: none !important ;
+    }
+ </style>
 @extends('backend.layout.main')
 @section('content')
 @if(session()->has('message'))
@@ -10,7 +15,7 @@
     <div class="container-fluid">
         @if(in_array("billers-add", $all_permission))
         <a href="{{route('biller.create')}}" class="btn btn-info"><i class="dripicons-plus"></i> {{trans('file.Add Biller')}}</a>&nbsp;
-        <a href="#" data-toggle="modal" data-target="#importbiller" class="btn btn-primary"><i class="dripicons-copy"></i> {{trans('file.Import Biller')}}</a>
+        {{-- <a href="#" data-toggle="modal" data-target="#importbiller" class="btn btn-primary"><i class="dripicons-copy"></i> {{trans('file.Import Biller')}}</a> --}}
         @endif
     </div>
     <div class="table-responsive">

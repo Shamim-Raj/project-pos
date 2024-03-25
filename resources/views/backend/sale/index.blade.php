@@ -1,3 +1,9 @@
+<style>
+    .dt-buttons{
+     display: none !important ;
+    }
+ </style>
+ 
 @extends('backend.layout.main')
 @section('content')
 @if(session()->has('message'))
@@ -67,7 +73,7 @@
         </div>
         @if(in_array("sales-add", $all_permission))
             <a href="{{route('sales.create')}}" class="btn btn-info add-sale-btn"><i class="dripicons-plus"></i> {{trans('file.Add Sale')}}</a>&nbsp;
-            <a href="{{url('sales/sale_by_csv')}}" class="btn btn-primary add-sale-btn"><i class="dripicons-copy"></i> {{trans('file.Import Sale')}}</a>
+            {{-- <a href="{{url('sales/sale_by_csv')}}" class="btn btn-primary add-sale-btn"><i class="dripicons-copy"></i> {{trans('file.Import Sale')}}</a> --}}
         @endif
     </div>
     <div class="table-responsive">

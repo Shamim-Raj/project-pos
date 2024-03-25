@@ -56,3 +56,12 @@ div.has-error> .form-text {
     box-shadow: #000 0px 2px 5px 1px;
    }
 
+
+
+   /* ================ */
+   #supplier-table_filter{
+    display: none !important;
+   }
+   .dt-buttons{
+    display: none;
+   }

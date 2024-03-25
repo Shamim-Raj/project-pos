@@ -14,12 +14,12 @@
                         <p class="italic"><small>{{trans('file.The field labels marked with * are required input fields')}}.</small></p>
                         {!! Form::open(['route' => 'supplier.store', 'method' => 'post', 'files' => true]) !!}
                         <div class="row">
-                            <div class="col-md-4 mt-4">
+                            {{-- <div class="col-md-4 mt-4">
                                 <div class="form-group">
                                     <input type="checkbox" name="both" value="1" />&nbsp;
                                     <label>{{trans('file.Both Customer and Supplier')}}</label>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-4 customer-group-section">
                                 <div class="form-group">
                                     <label>{{trans('file.Customer Group')}} *</strong> </label>
@@ -93,18 +93,18 @@
                                     <input type="text" name="city" required class="form-control">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            {{-- <div class="col-md-4">
                                 <div class="form-group">
                                     <label>{{trans('file.State')}}</label>
                                     <input type="text" name="state" class="form-control">
                                 </div>
-                            </div>
-                            <div class="col-md-4">
+                            </div> --}}
+                            {{-- <div class="col-md-4">
                                 <div class="form-group">
                                     <label>{{trans('file.Postal Code')}}</label>
                                     <input type="text" name="postal_code" class="form-control">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>{{trans('file.Country')}}</label>

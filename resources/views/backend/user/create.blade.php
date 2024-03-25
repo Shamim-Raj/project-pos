@@ -29,9 +29,9 @@
                                         <label><strong>{{trans('file.Password')}} *</strong> </label>
                                         <div class="input-group">
                                             <input type="password" name="password" required class="form-control">
-                                            <div class="input-group-append">
+                                            {{-- <div class="input-group-append">
                                                 <button id="genbutton" type="button" class="btn btn-default">{{trans('file.Generate')}}</button>
-                                            </div>
+                                            </div> --}}
                                             @if($errors->has('password'))
                                             <small>
                                                <strong>{{ $errors->first('password') }}</strong>

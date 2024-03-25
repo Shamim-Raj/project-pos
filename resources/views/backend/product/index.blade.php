@@ -1,3 +1,8 @@
+<style>
+    .dt-buttons{
+     display: none !important ;
+    }
+ </style>
 @extends('backend.layout.main')
 @section('content')
 

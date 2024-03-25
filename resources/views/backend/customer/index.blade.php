@@ -1,3 +1,8 @@
+<style>
+    .dt-buttons{
+     display: none !important ;
+    }
+ </style>
 @extends('backend.layout.main') @section('content')
 @if(session()->has('create_message'))
     <div class="alert alert-success alert-dismissible text-center"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{!! session()->get('create_message') !!}</div>
@@ -16,7 +21,7 @@
     <div class="container-fluid">
         @if(in_array("customers-add", $all_permission))
             <a href="{{route('customer.create')}}" class="btn btn-info"><i class="dripicons-plus"></i> {{trans('file.Add Customer')}}</a>&nbsp;
-            <a href="#" data-toggle="modal" data-target="#importCustomer" class="btn btn-primary"><i class="dripicons-copy"></i> {{trans('file.Import Customer')}}</a>
+            {{-- <a href="#" data-toggle="modal" data-target="#importCustomer" class="btn btn-primary"><i class="dripicons-copy"></i> {{trans('file.Import Customer')}}</a> --}}
         @endif
     </div>
     <div class="table-responsive">

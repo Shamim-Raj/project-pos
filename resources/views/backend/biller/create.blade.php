@@ -74,18 +74,18 @@
                                     <input type="text" name="city" required class="form-control">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>{{trans('file.State')}}</label>
                                     <input type="text" name="state" class="form-control">
                                 </div>
-                            </div>
-                            <div class="col-md-6">
+                            </div> --}}
+                            {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label>{{trans('file.Postal Code')}}</label>
                                     <input type="text" name="postal_code" class="form-control">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>{{trans('file.Country')}}</label>

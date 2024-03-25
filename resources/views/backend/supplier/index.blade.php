@@ -1,3 +1,9 @@
+
+<style>
+   .dt-buttons{
+    display: none !important ;
+   }
+</style>
 @extends('backend.layout.main') @section('content')
 @if(session()->has('not_permitted'))
   <div class="alert alert-danger alert-dismissible text-center"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{ session()->get('not_permitted') }}</div>
@@ -9,7 +15,7 @@
     <div class="container-fluid">
         @if(in_array("suppliers-add", $all_permission))
         <a href="{{route('supplier.create')}}" class="btn btn-info"><i class="dripicons-plus"></i> {{trans('file.Add Supplier')}}</a>
-        <a href="#" data-toggle="modal" data-target="#importSupplier" class="btn btn-primary"><i class="dripicons-copy"></i> {{trans('file.Import Supplier')}}</a>
+        {{-- <a href="#" data-toggle="modal" data-target="#importSupplier" class="btn btn-primary"><i class="dripicons-copy"></i> {{trans('file.Import Supplier')}}</a> --}}
         @endif
     </div>
     <div class="table-responsive">
@@ -196,7 +202,6 @@
 	}
 
     $('#supplier-table').DataTable( {
-        "order": [],
         'language': {
             'lengthMenu': '_MENU_ {{trans("file.records per page")}}',
              "info":      '<small>{{trans("file.Showing")}} _START_ - _END_ (_TOTAL_)</small>',

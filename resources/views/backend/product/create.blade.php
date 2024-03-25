@@ -51,11 +51,11 @@
                                         <div class="input-group">
                                             <select name="barcode_symbology" required class="form-control selectpicker">
                                                 <option value="C128">Code 128</option>
-                                                <option value="C39">Code 39</option>
+                                                {{-- <option value="C39">Code 39</option>
                                                 <option value="UPCA">UPC-A</option>
                                                 <option value="UPCE">UPC-E</option>
                                                 <option value="EAN8">EAN-8</option>
-                                                <option value="EAN13">EAN-13</option>
+                                                <option value="EAN13">EAN-13</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -167,19 +167,19 @@
                                         <input type="hidden" name="qty" value="{{number_format(0, $general_setting->decimal, '.', '')}}">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                {{-- <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{trans('file.Daily Sale Objective')}}</strong></label> <i class="dripicons-question" data-toggle="tooltip" title="{{trans('file.Minimum qty which must be sold in a day. If not, you will be notified on dashboard. But you have to set up the cron job properly for that. Follow the documentation in that regard.')}}"></i>
                                         <input type="number" name="daily_sale_objective" class="form-control" step="any">
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div id="alert-qty" class="col-md-4">
                                     <div class="form-group">
                                         <label>{{trans('file.Alert Quantity')}}</strong> </label>
                                         <input type="number" name="alert_quantity" class="form-control" step="any">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                {{-- <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{trans('file.Product Tax')}}</strong> </label>
                                         <select name="tax_id" class="form-control selectpicker">
@@ -189,8 +189,8 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
+                                </div> --}}
+                                {{-- <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{trans('file.Tax Method')}}</strong> </label> <i class="dripicons-question" data-toggle="tooltip" title="{{trans('file.Exclusive: Poduct price = Actual product price + Tax. Inclusive: Actual product price = Product price - Tax')}}"></i>
                                         <select name="tax_method" class="form-control selectpicker">
@@ -198,8 +198,8 @@
                                             <option value="2">{{trans('file.Inclusive')}}</option>
                                         </select>
                                     </div>
-                                </div>
-                                @foreach($custom_fields as $field)
+                                </div> --}}
+                                {{-- @foreach($custom_fields as $field)
                                 @if(!$field->is_admin || \Auth::user()->role_id == 1)
                                     <div class="{{'col-md-'.$field->grid_value}}">
                                         <div class="form-group">
@@ -268,7 +268,7 @@
                                         <input type="checkbox" name="is_embeded" value="1">&nbsp;
                                         <label>{{trans('file.Embedded Barcode')}} <i class="dripicons-question" data-toggle="tooltip" title="{{trans('file.Check this if this product will be used in weight scale machine.')}}"></i></label>
                                     </div>
-                                </div>
+                                </div> 
                                 <div class="col-md-6" id="initial-stock-section">
                                     <div class="table-responsive ml-2">
                                         <table class="table table-hover">
@@ -292,6 +292,7 @@
                                         </table>
                                     </div>
                                 </div>
+                                --}}
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>{{trans('file.Product Image')}}</strong> </label> <i class="dripicons-question" data-toggle="tooltip" title="{{trans('file.You can upload multiple image. Only .jpeg, .jpg, .png, .gif file can be uploaded. First image will be base image.')}}"></i>
@@ -299,13 +300,13 @@
                                         <span class="validation-msg" id="image-error"></span>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <div class="form-group">
                                         <label>{{trans('file.Product Details')}}</label>
                                         <textarea name="product_details" class="form-control" rows="3"></textarea>
                                     </div>
-                                </div>
-                                <div class="col-md-12 mt-3" id="variant-option">
+                                </div> --}}
+                                {{-- <div class="col-md-12 mt-3" id="variant-option">
                                     <h5><input name="is_variant" type="checkbox" id="is-variant" value="1">&nbsp; {{trans('file.This product has variant')}}</h5>
                                 </div>
                                 <div class="col-md-12" id="variant-section">
@@ -406,7 +407,7 @@
                                 <div class="col-md-12 mt-3">
                                     <h5><input name="is_sync_disable" type="checkbox" id="is_sync_disable" value="1">&nbsp; {{trans('file.Disable Woocommerce Sync')}}</h5>
                                 </div>
-                                @endif
+                                @endif --}}
                             </div>
                             <div class="form-group mt-3">
                                 <input type="button" value="{{trans('file.submit')}}" id="submit-btn" class="btn btn-primary">
