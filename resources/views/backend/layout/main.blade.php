@@ -399,7 +399,7 @@
             @yield('content')
       </div>
 
-      <footer class="main-footer">
+      {{-- <footer class="main-footer">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-12">
@@ -407,7 +407,7 @@
             </div>
           </div>
         </div>
-      </footer>
+      </footer> --}}
 
       <!-- notification modal -->
       <div id="notification-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
