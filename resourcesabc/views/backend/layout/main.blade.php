@@ -242,12 +242,12 @@
             @if($sale_add_permission_active)
             <li class="nav-item"><a class="btn-pos btn-sm" href="{{route('sale.pos')}}"><i class="dripicons-shopping-bag"></i><span> POS</span></a></li>
             @endif
-            {{-- <li class="nav-item"><a id="switch-theme" data-toggle="tooltip" title="{{trans('file.Switch Theme')}}"><i class="dripicons-brightness-max"></i></a></li> --}}
+            <li class="nav-item"><a id="switch-theme" data-toggle="tooltip" title="{{trans('file.Switch Theme')}}"><i class="dripicons-brightness-max"></i></a></li>
             <li class="nav-item"><a id="btnFullscreen" data-toggle="tooltip" title="{{trans('file.Full Screen')}}"><i class="dripicons-expand"></i></a></li>
             @if(\Auth::user()->role_id <= 2)
-                {{-- <li class="nav-item"><a href="{{route('cashRegister.index')}}" data-toggle="tooltip" title="{{trans('file.Cash Register List')}}"><i class="dripicons-archive"></i></a></li> --}}
+                <li class="nav-item"><a href="{{route('cashRegister.index')}}" data-toggle="tooltip" title="{{trans('file.Cash Register List')}}"><i class="dripicons-archive"></i></a></li>
             @endif
-            {{-- @if($product_qty_alert_active && ($alert_product + $dso_alert_product_no + \Auth::user()->unreadNotifications->where('data.reminder_date', date('Y-m-d'))->count() ) > 0)
+            @if($product_qty_alert_active && ($alert_product + $dso_alert_product_no + \Auth::user()->unreadNotifications->where('data.reminder_date', date('Y-m-d'))->count() ) > 0)
                 <li class="nav-item" id="notification-icon">
                     <a rel="nofollow" data-toggle="tooltip" title="{{__('Notifications')}}" class="nav-link dropdown-item"><i class="dripicons-bell"></i><span class="badge badge-danger notification-number">{{$alert_product + $dso_alert_product_no + \Auth::user()->unreadNotifications->where('data.reminder_date', date('Y-m-d'))->count()}}</span>
                     </a>
@@ -271,7 +271,7 @@
                         @endforeach
                     </ul>
                 </li>
-            @endif --}}
+            @endif
             @if(\Auth::user()->unreadNotifications->where('data.reminder_date', date('Y-m-d'))->count() > 0)
                 <li class="nav-item" id="notification-icon">
                     <a rel="nofollow" data-toggle="tooltip" title="{{__('Notifications')}}" class="nav-link dropdown-item"><i class="dripicons-bell"></i><span class="badge badge-danger notification-number">{{\Auth::user()->unreadNotifications->where('data.reminder_date', date('Y-m-d'))->count()}}</span>
@@ -289,7 +289,7 @@
                     </ul>
                 </li>
             @endif
-            {{-- <li class="nav-item">
+            <li class="nav-item">
                     <!--<a rel="nofollow" title="{{trans('file.language')}}" data-toggle="tooltip" class="nav-link dropdown-item"><i class="dripicons-web"></i></a>-->
                     <ul class="right-sidebar">
                         <li>
@@ -350,7 +350,7 @@
                           <a href="{{ url('language_switch/swahili') }}" class="btn btn-link"> Swahili</a>
                         </li>
                     </ul>
-            </li> --}}
+            </li>
             <li class="nav-item">
                 <a rel="nofollow" data-toggle="tooltip" class="nav-link dropdown-item"><i class="dripicons-user"></i> <span>{{ucfirst(Auth::user()->name)}}</span> <i class="fa fa-angle-down"></i>
                 </a>
@@ -358,7 +358,7 @@
                     <li>
                     <a href="{{route('user.profile', ['id' => Auth::id()])}}"><i class="dripicons-user"></i> {{trans('file.profile')}}</a>
                     </li>
-                    {{-- @if($general_setting_permission_active)
+                    @if($general_setting_permission_active)
                     <li>
                     <a href="{{route('setting.general')}}"><i class="dripicons-gear"></i> {{trans('file.settings')}}</a>
                     </li>
@@ -375,7 +375,7 @@
                     <li>
                     <a onclick="return confirm('Are you sure want to delete? If you do this all of your data will be lost.')" href="{{route('setting.emptyDatabase')}}"><i class="dripicons-stack"></i> {{trans('file.Empty Database')}}</a>
                     </li>
-                    @endif --}}
+                    @endif
                     <li>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -399,7 +399,7 @@
             @yield('content')
       </div>
 
-      {{-- <footer class="main-footer">
+      <footer class="main-footer">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-12">
@@ -407,7 +407,7 @@
             </div>
           </div>
         </div>
-      </footer> --}}
+      </footer>
 
       <!-- notification modal -->
       <div id="notification-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">

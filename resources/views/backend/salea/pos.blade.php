@@ -74,7 +74,9 @@
                                                 @endif
                                                 <select required id="warehouse_id" name="warehouse_id" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select warehouse...">
                                                     @foreach($lims_warehouse_list as $warehouse)
-                                                    <option value="{{$warehouse->id}}">{{$warehouse->name}}</option>
+                                                    <option value="{{$warehouse->id}}">
+                                                        {{$warehouse->name}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -98,6 +100,7 @@
                                                     @foreach($lims_warehouse_list as $warehouse)
                                                     <option value="{{$warehouse->id}}">{{$warehouse->name}}</option>
                                                     @endforeach
+                                                    {{-- <option>Mirpur</option> --}}
                                                 </select>
                                             </div>
                                         </div>
@@ -111,6 +114,7 @@
                                             @foreach($lims_biller_list as $biller)
                                             <option value="{{$biller->id}}">{{$biller->name . ' (' . $biller->company_name . ')'}}</option>
                                             @endforeach
+                                           {{-- <option> Royel Shop </option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -327,14 +331,14 @@
                         <div class="column-5">
                             <button style="background: #0984e3" type="button" class="btn btn-sm btn-custom payment-btn" data-toggle="modal" data-target="#add-payment" id="credit-card-btn"><i class="fa fa-credit-card"></i> {{trans('file.Card')}}</button>
                         </div>
-                        @endif --}}
+                        @endif
                      
-                        {{-- @if(in_array("paypal",$options) && $lims_pos_setting_data && (strlen($lims_pos_setting_data->paypal_live_api_username)>0) && (strlen($lims_pos_setting_data->paypal_live_api_password)>0) && (strlen($lims_pos_setting_data->paypal_live_api_secret)>0))
+                        @if(in_array("paypal",$options) && $lims_pos_setting_data && (strlen($lims_pos_setting_data->paypal_live_api_username)>0) && (strlen($lims_pos_setting_data->paypal_live_api_password)>0) && (strlen($lims_pos_setting_data->paypal_live_api_secret)>0))
                         <div class="column-5">
                             <button style="background-color: #213170" type="button" class="btn btn-sm btn-custom payment-btn" data-toggle="modal" data-target="#add-payment" id="paypal-btn"><i class="fa fa-paypal"></i> {{trans('file.PayPal')}}</button>
                         </div>
-                        @endif --}}
-                        {{-- <div class="column-5">
+                        @endif
+                        <div class="column-5">
                             <button style="background-color: #e28d02" type="button" class="btn btn-sm btn-custom" id="draft-btn"><i class="dripicons-flag"></i> {{trans('file.Draft')}}</button>
                         </div>
                         @if(in_array("cheque",$options))
@@ -665,9 +669,9 @@
                             {{-- @if($pos_setting_permission_active)
                             <li class="nav-item"><a class="dropdown-item" data-toggle="tooltip" href="{{route('setting.pos')}}" title="{{trans('file.POS Setting')}}"><i class="dripicons-gear"></i></a> </li>
                             @endif --}}
-                            <li class="nav-item">
-                                {{-- <a href="{{route('sales.printLastReciept')}}" data-toggle="tooltip" title="{{trans('file.Print Last Reciept')}}"><i class="dripicons-print"></i></a> --}}
-                            </li>
+                            {{-- <li class="nav-item">
+                                <a href="{{route('sales.printLastReciept')}}" data-toggle="tooltip" title="{{trans('file.Print Last Reciept')}}"><i class="dripicons-print"></i></a>
+                            </li> --}}
                             <li class="nav-item">
                                 <a href="" id="register-details-btn" data-toggle="tooltip" title="{{trans('file.Cash Register Details')}}"><i class="dripicons-briefcase"></i></a>
                             </li>
@@ -684,24 +688,24 @@
                                             ['role_id', Auth::user()->role_id]
                                         ])->first();
                             ?>
-
+{{-- 
                             @if($today_sale_permission_active)
                             <li class="nav-item">
-                                {{-- <a href="" id="today-sale-btn" data-toggle="tooltip" title="{{trans('file.Today Sale')}}"><i class="dripicons-shopping-bag"></i></a> --}}
+                                <a href="" id="today-sale-btn" data-toggle="tooltip" title="{{trans('file.Today Sale')}}"><i class="dripicons-shopping-bag"></i></a>
                             </li>
                             @endif
                             @if($today_profit_permission_active)
                             <li class="nav-item">
-                                {{-- <a href="" id="today-profit-btn" data-toggle="tooltip" title="{{trans('file.Today Profit')}}"><i class="dripicons-graph-line"></i></a> --}}
+                                <a href="" id="today-profit-btn" data-toggle="tooltip" title="{{trans('file.Today Profit')}}"><i class="dripicons-graph-line"></i></a>
                             </li>
-                            @endif
+                            @endif --}}
                             @if(($alert_product + count(\Auth::user()->unreadNotifications)) > 0)
                             <li class="nav-item" id="notification-icon">
                                   <a rel="nofollow" data-toggle="tooltip" title="{{__('Notifications')}}" class="nav-link dropdown-item"><i class="dripicons-bell"></i><span class="badge badge-danger notification-number">{{$alert_product + count(\Auth::user()->unreadNotifications)}}</span>
                                       <span class="caret"></span>
                                       <span class="sr-only">Toggle Dropdown</span>
                                   </a>
-                                  <ul class="right-sidebar" user="menu">
+                                  {{-- <ul class="right-sidebar" user="menu">
                                       <li class="notifications">
                                         <a href="{{route('report.qtyAlert')}}" class="btn btn-link">{{$alert_product}} product exceeds alert quantity</a>
                                       </li>
@@ -710,7 +714,7 @@
                                               <a href="#" class="btn btn-link">{{ $notification->data['message'] }}</a>
                                           </li>
                                       @endforeach
-                                  </ul>
+                                  </ul> --}}
                             </li>
                             @endif
                             <li class="nav-item">
@@ -720,19 +724,19 @@
                                     <li>
                                         <a href="{{route('user.profile', ['id' => Auth::id()])}}"><i class="dripicons-user"></i> {{trans('file.profile')}}</a>
                                     </li>
-                                    @if($general_setting_permission_active)
+                                     {{-- @if($general_setting_permission_active)
                                     <li>
-                                        {{-- <a href="{{route('setting.general')}}"><i class="dripicons-gear"></i> {{trans('file.settings')}}</a> --}}
+                                        <a href="{{route('setting.general')}}"><i class="dripicons-gear"></i> {{trans('file.settings')}}</a>
                                     </li>
                                     @endif
                                     <li>
-                                        {{-- <a href="{{url('my-transactions/'.date('Y').'/'.date('m'))}}"><i class="dripicons-swap"></i> {{trans('file.My Transaction')}}</a> --}}
+                                        <a href="{{url('my-transactions/'.date('Y').'/'.date('m'))}}"><i class="dripicons-swap"></i> {{trans('file.My Transaction')}}</a>
                                     </li>
                                     @if(Auth::user()->role_id != 5)
                                     <li>
-                                        {{-- <a href="{{url('holidays/my-holiday/'.date('Y').'/'.date('m'))}}"><i class="dripicons-vibrate"></i> {{trans('file.My Holiday')}}</a> --}}
-                                    </li>
-                                    @endif
+                                        <a href="{{url('holidays/my-holiday/'.date('Y').'/'.date('m'))}}"><i class="dripicons-vibrate"></i> {{trans('file.My Holiday')}}</a>
+                                    </li> 
+                                    @endif --}}
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -2531,7 +2535,11 @@ function edit(){
     if(is_imei[rowindex]) {
         var imeiNumbers = $('table.order-list tbody tr:nth-child(' + (rowindex + 1) + ')').find('.imei-number').val();
 
-        htmlText = '<div class="col-md-12 form-group imei-section"><label>IMEI or Serial Numbers</label><input type="text" name="imei_numbers" value="'+imeiNumbers+'" class="form-control imei_number" placeholder="Type imei or serial numbers and separate them by comma. Example:1001,2001" step="any"></div>';
+        htmlText = '<div class="col-md-12 form-group imei-section"><label>IMEI or Serial Numbers</label><input type="text" name="im
+            
+
+
+            
         $("#editModal .modal-element").append(htmlText);
     }
 
