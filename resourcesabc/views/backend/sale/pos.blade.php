@@ -285,7 +285,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <div class="col-12 totals" style="border-top: 2px solid #e4e6fc; padding-top: 10px;">
+                                <div class="col-12 totals" style="border-top: 2px solid #e4e6fc; padding-top: 10px;">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <span class="totals-title">{{trans('file.Items')}}</span><span id="item">0</span>
@@ -306,7 +306,7 @@
                                             <span class="totals-title">{{trans('file.Shipping')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#shipping-cost-modal"><i class="dripicons-document-edit"></i></button></span><span id="shipping-cost">{{number_format(0, $general_setting->decimal, '.', '')}}</span>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -323,18 +323,18 @@
                         </div>
                         @endif
                     </div>
-                        {{-- @if(in_array("card",$options))
+                        @if(in_array("card",$options))
                         <div class="column-5">
                             <button style="background: #0984e3" type="button" class="btn btn-sm btn-custom payment-btn" data-toggle="modal" data-target="#add-payment" id="credit-card-btn"><i class="fa fa-credit-card"></i> {{trans('file.Card')}}</button>
                         </div>
-                        @endif --}}
+                        @endif
                      
-                        {{-- @if(in_array("paypal",$options) && $lims_pos_setting_data && (strlen($lims_pos_setting_data->paypal_live_api_username)>0) && (strlen($lims_pos_setting_data->paypal_live_api_password)>0) && (strlen($lims_pos_setting_data->paypal_live_api_secret)>0))
+                        @if(in_array("paypal",$options) && $lims_pos_setting_data && (strlen($lims_pos_setting_data->paypal_live_api_username)>0) && (strlen($lims_pos_setting_data->paypal_live_api_password)>0) && (strlen($lims_pos_setting_data->paypal_live_api_secret)>0))
                         <div class="column-5">
                             <button style="background-color: #213170" type="button" class="btn btn-sm btn-custom payment-btn" data-toggle="modal" data-target="#add-payment" id="paypal-btn"><i class="fa fa-paypal"></i> {{trans('file.PayPal')}}</button>
                         </div>
-                        @endif --}}
-                        {{-- <div class="column-5">
+                        @endif
+                        <div class="column-5">
                             <button style="background-color: #e28d02" type="button" class="btn btn-sm btn-custom" id="draft-btn"><i class="dripicons-flag"></i> {{trans('file.Draft')}}</button>
                         </div>
                         @if(in_array("cheque",$options))
@@ -362,7 +362,7 @@
                         </div>
                         <div class="column-5">
                             <button style="background-color: #ffc107;" type="button" class="btn btn-sm btn-custom" data-toggle="modal" data-target="#recentTransaction"><i class="dripicons-clock"></i> {{trans('file.Recent Transaction')}}</button>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -562,7 +562,7 @@
 
                         <div class="navbar-header">
                           <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                            {{-- <div class="dropdown">
+                            <div class="dropdown">
                               <a class="btn-pos btn-sm" type="button" data-toggle="dropdown" aria-expanded="false">
                                 <i class="dripicons-plus"></i>
                               </a>
@@ -646,7 +646,7 @@
                                 <li class="dropdown-item"><a href="{{route('supplier.create')}}">{{trans('file.Add Supplier')}}</a></li>
                                 @endif
                               </ul>
-                            </div> --}}
+                            </div>
                             <li class="nav-item ml-4"><a id="btnFullscreen" data-toggle="tooltip" title="Full Screen"><i class="dripicons-expand"></i></a></li>
                             <?php
                                 $general_setting_permission = $permission_list->where('name', 'general_setting')->first();
@@ -662,11 +662,11 @@
                                     ['role_id', Auth::user()->role_id]
                                 ])->first();
                             ?>
-                            {{-- @if($pos_setting_permission_active)
+                            @if($pos_setting_permission_active)
                             <li class="nav-item"><a class="dropdown-item" data-toggle="tooltip" href="{{route('setting.pos')}}" title="{{trans('file.POS Setting')}}"><i class="dripicons-gear"></i></a> </li>
-                            @endif --}}
+                            @endif
                             <li class="nav-item">
-                                {{-- <a href="{{route('sales.printLastReciept')}}" data-toggle="tooltip" title="{{trans('file.Print Last Reciept')}}"><i class="dripicons-print"></i></a> --}}
+                                <a href="{{route('sales.printLastReciept')}}" data-toggle="tooltip" title="{{trans('file.Print Last Reciept')}}"><i class="dripicons-print"></i></a>
                             </li>
                             <li class="nav-item">
                                 <a href="" id="register-details-btn" data-toggle="tooltip" title="{{trans('file.Cash Register Details')}}"><i class="dripicons-briefcase"></i></a>
@@ -687,12 +687,12 @@
 
                             @if($today_sale_permission_active)
                             <li class="nav-item">
-                                {{-- <a href="" id="today-sale-btn" data-toggle="tooltip" title="{{trans('file.Today Sale')}}"><i class="dripicons-shopping-bag"></i></a> --}}
+                                <a href="" id="today-sale-btn" data-toggle="tooltip" title="{{trans('file.Today Sale')}}"><i class="dripicons-shopping-bag"></i></a>
                             </li>
                             @endif
                             @if($today_profit_permission_active)
                             <li class="nav-item">
-                                {{-- <a href="" id="today-profit-btn" data-toggle="tooltip" title="{{trans('file.Today Profit')}}"><i class="dripicons-graph-line"></i></a> --}}
+                                <a href="" id="today-profit-btn" data-toggle="tooltip" title="{{trans('file.Today Profit')}}"><i class="dripicons-graph-line"></i></a>
                             </li>
                             @endif
                             @if(($alert_product + count(\Auth::user()->unreadNotifications)) > 0)
@@ -722,15 +722,15 @@
                                     </li>
                                     @if($general_setting_permission_active)
                                     <li>
-                                        {{-- <a href="{{route('setting.general')}}"><i class="dripicons-gear"></i> {{trans('file.settings')}}</a> --}}
+                                        <a href="{{route('setting.general')}}"><i class="dripicons-gear"></i> {{trans('file.settings')}}</a>
                                     </li>
                                     @endif
                                     <li>
-                                        {{-- <a href="{{url('my-transactions/'.date('Y').'/'.date('m'))}}"><i class="dripicons-swap"></i> {{trans('file.My Transaction')}}</a> --}}
+                                        <a href="{{url('my-transactions/'.date('Y').'/'.date('m'))}}"><i class="dripicons-swap"></i> {{trans('file.My Transaction')}}</a>
                                     </li>
                                     @if(Auth::user()->role_id != 5)
                                     <li>
-                                        {{-- <a href="{{url('holidays/my-holiday/'.date('Y').'/'.date('m'))}}"><i class="dripicons-vibrate"></i> {{trans('file.My Holiday')}}</a> --}}
+                                        <a href="{{url('holidays/my-holiday/'.date('Y').'/'.date('m'))}}"><i class="dripicons-vibrate"></i> {{trans('file.My Holiday')}}</a>
                                     </li>
                                     @endif
                                     <li>
