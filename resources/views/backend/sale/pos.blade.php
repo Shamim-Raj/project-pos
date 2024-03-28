@@ -96,7 +96,10 @@
                                                 @endif
                                                 <select required id="warehouse_id" name="warehouse_id" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select warehouse...">
                                                     @foreach($lims_warehouse_list as $warehouse)
-                                                    <option value="{{$warehouse->id}}">{{$warehouse->name}}</option>
+                                                    <option value="{{$warehouse->id}}">
+                                                        {{-- {{$warehouse->name}} --}}
+                                                        Mirpur
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -109,7 +112,10 @@
                                             @endif
                                             <select required id="biller_id" name="biller_id" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select Biller...">
                                             @foreach($lims_biller_list as $biller)
-                                            <option value="{{$biller->id}}">{{$biller->name . ' (' . $biller->company_name . ')'}}</option>
+                                            <option value="{{$biller->id}}">
+                                                {{-- {{$biller->name . ' (' . $biller->company_name . ')'}} --}}
+                                                Royel Shop
+                                            </option>
                                             @endforeach
                                             </select>
                                         </div>
@@ -669,7 +675,7 @@
                                 {{-- <a href="{{route('sales.printLastReciept')}}" data-toggle="tooltip" title="{{trans('file.Print Last Reciept')}}"><i class="dripicons-print"></i></a> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="" id="register-details-btn" data-toggle="tooltip" title="{{trans('file.Cash Register Details')}}"><i class="dripicons-briefcase"></i></a>
+                                {{-- <a href="" id="register-details-btn" data-toggle="tooltip" title="{{trans('file.Cash Register Details')}}"><i class="dripicons-briefcase"></i></a> --}}
                             </li>
                             <?php
                                 $today_sale_permission = $permission_list->where('name', 'today_sale')->first();

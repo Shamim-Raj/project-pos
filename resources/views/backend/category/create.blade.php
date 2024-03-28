@@ -1,3 +1,8 @@
+<style>
+    .dt-buttons{
+     display: none !important ;
+    }
+ </style>
 @extends('backend.layout.main') @section('content')
 
 @if($errors->has('name'))
@@ -17,7 +22,7 @@
     <div class="container-fluid">
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#category-modal"><i class="dripicons-plus"></i> {{trans("file.Add Category")}}</button>&nbsp;
-        <button class="btn btn-primary" data-toggle="modal" data-target="#importCategory"><i class="dripicons-copy"></i> {{trans('file.Import Category')}}</button>
+        {{-- <button class="btn btn-primary" data-toggle="modal" data-target="#importCategory"><i class="dripicons-copy"></i> {{trans('file.Import Category')}}</button> --}}
     </div>
     <div class="table-responsive">
         <table id="category-table" class="table" style="width: 100%">
