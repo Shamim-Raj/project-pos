@@ -1,3 +1,8 @@
+<style>
+    .hide{
+        display: none;
+    }
+</style>
 @extends('backend.layout.main') @section('content')
 @if(session()->has('not_permitted'))
   <div class="alert alert-danger alert-dismissible text-center"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{ session()->get('not_permitted') }}</div>
@@ -53,7 +58,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                        {{-- <div class="col-md-4">
+                                         <div class="col-md-4 hide">
                                             <div class="form-group">
                                                 <label>{{trans('file.Attach Document')}}</label> <i class="dripicons-question" data-toggle="tooltip" title="Only jpg, jpeg, png, gif, pdf, csv, docx, xlsx and txt file is supported"></i>
                                                 <input type="file" name="document" class="form-control" >
@@ -63,7 +68,7 @@
                                                     </span>
                                                 @endif
                                             </div>
-                                        </div> --}}
+                                        </div> 
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label>{{trans('file.Currency')}} *</label>
@@ -74,7 +79,7 @@
                                             </select>
                                         </div>
                                     </div> 
-                                    {{-- <div class="col-md-2">
+                                    <div class="col-md-2 hide">
                                         <div class="form-group mb-0">
                                             <label>{{trans('file.Exchange Rate')}} *</label>
                                         </div>
@@ -84,7 +89,7 @@
                                                 <span class="input-group-text" data-toggle="tooltip" title="" data-original-title="currency exchange rate">i</span>
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     @foreach($custom_fields as $field)
                                         @if(!$field->is_admin || \Auth::user()->role_id == 1)
                                             <div class="{{'col-md-'.$field->grid_value}}">
@@ -143,7 +148,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mt-4">
+                                <div class="row mt-4 hide">
                                     <div class="col-md-12">
                                         <h5>{{trans('file.Order Table')}} *</h5>
                                         <div class="table-responsive mt-3">
@@ -181,7 +186,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row hide">
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <input type="hidden" name="total_qty" />
@@ -216,8 +221,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <div class="row mt-3">
-                                    <div class="col-md-4">
+                                <div class="row mt-3 ">
+                                    <div class="col-md-4 hide">
                                         <div class="form-group">
                                             <label>{{trans('file.Order Tax')}}</label>
                                             <select class="form-control" name="order_tax_rate">
@@ -228,7 +233,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 hide">
                                         <div class="form-group">
                                             <label>
                                                 <strong>{{trans('file.Discount')}}</strong>
@@ -237,22 +242,22 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group">
+                                        <div class="form-group hide">
                                             <label>
                                                 <strong>{{trans('file.Shipping Cost')}}</strong>
                                             </label>
                                             <input type="number" name="shipping_cost" class="form-control" step="any" />
                                         </div>
                                     </div>
-                                </div> --}}
-                                {{-- <div class="row">
-                                    <div class="col-md-12">
+                                </div>
+                                <div class="row hide">
+                                    <div class="col-md-12 hide">
                                         <div class="form-group">
                                             <label>{{trans('file.Note')}}</label>
                                             <textarea rows="5" class="form-control" name="note"></textarea>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary" id="submit-btn">{{trans('file.submit')}}</button>
                                 </div>
@@ -272,18 +277,20 @@
             <td><strong>{{trans('file.Total')}}</strong>
                 <span class="pull-right" id="subtotal">{{number_format(0, $general_setting->decimal, '.', '')}}</span>
             </td>
-            {{-- <td><strong>{{trans('file.Order Tax')}}</strong>
+
+            <td class="hide"><strong>{{trans('file.Order Tax')}}</strong>
                 <span class="pull-right" id="order_tax">{{number_format(0, $general_setting->decimal, '.', '')}}</span>
             </td>
-            <td><strong>{{trans('file.Order Discount')}}</strong>
+            <td class="hide"><strong>{{trans('file.Order Discount')}}</strong>
                 <span class="pull-right" id="order_discount">{{number_format(0, $general_setting->decimal, '.', '')}}</span>
             </td>
-            <td><strong>{{trans('file.Shipping Cost')}}</strong>
+            <td class="hide"><strong>{{trans('file.Shipping Cost')}}</strong>
                 <span class="pull-right" id="shipping_cost">{{number_format(0, $general_setting->decimal, '.', '')}}</span>
-            </td> --}}
-            <td><strong>{{trans('file.grand total')}}</strong>
+            </td>
+            <td class="hide"><strong>{{trans('file.grand total')}}</strong>
                 <span class="pull-right" id="grand_total">{{number_format(0, $general_setting->decimal, '.', '')}}</span>
             </td>
+
         </table>
     </div>
     <div id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
@@ -316,7 +323,7 @@
                                     $tax_rate_all[] = $tax->rate;
                                 }
                             ?>
-                            <div class="col-md-4 form-group">
+                            <div class="col-md-4 form-group hide">
                                 <label>{{trans('file.Tax Rate')}}</label>
                                 <select name="edit_tax_rate" class="form-control selectpicker">
                                     @foreach($tax_name_all as $key => $name)

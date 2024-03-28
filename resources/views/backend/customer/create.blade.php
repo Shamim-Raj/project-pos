@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-group">
+                                <div class="form-group d-none">
                                     <label>{{trans('file.Tax Number')}}</label>
                                     <input type="text" name="tax_no" class="form-control">
                                 </div>
