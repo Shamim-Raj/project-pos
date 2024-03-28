@@ -36,7 +36,7 @@
                                     <input type="text" name="name" required class="form-control">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            {{-- <div class="col-md-4">
                                 <div class="form-group">
                                     <label>{{trans('file.Image')}}</label>
                                     <input type="file" name="image" class="form-control">
@@ -46,7 +46,7 @@
                                     </span>
                                     @endif
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>{{trans('file.Company Name')}} *</label>
@@ -58,12 +58,12 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            {{-- <div class="col-md-4">
                                 <div class="form-group">
                                     <label>{{trans('file.VAT Number')}}</label>
                                     <input type="text" name="vat_number" class="form-control">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>{{trans('file.Email')}} *</label>

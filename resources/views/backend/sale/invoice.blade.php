@@ -239,13 +239,13 @@
                 </tr>
                 @endforeach
                 <tr><td class="centered" colspan="3">{{trans('file.Thank you for shopping with us. Please come again')}}</td></tr>
-                <tr>
+                {{-- <tr>
                     <td class="centered" colspan="3">
                     <?php echo '<img style="margin-top:10px;" src="data:image/png;base64,' . DNS1D::getBarcodePNG($lims_sale_data->reference_no, 'C128') . '" width="300" alt="barcode"   />';?>
                     <br>
                     <?php echo '<img style="margin-top:10px;" src="data:image/png;base64,' . DNS2D::getBarcodePNG($qrText, 'QRCODE') . '" alt="QRcode"   />';?>
                     </td>
-                </tr>
+                </tr> --}}
             </tbody>
         </table>
         <!-- <div class="centered" style="margin:30px 0 50px">
